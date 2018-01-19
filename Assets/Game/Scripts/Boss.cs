@@ -71,9 +71,9 @@ public class Boss : MonoBehaviour
         targetPositionTwo = new Vector3(Random.Range(-phaseOneRange, phaseOneRange), 0, Random.Range(-phaseOneRange, phaseOneRange));
         targetPositionThree = new Vector3(Random.Range(-phaseOneRange, phaseOneRange), 0, Random.Range(-phaseOneRange, phaseOneRange));
 
-        targetPositionOne += new Vector3(10, 0, 10);
-        targetPositionTwo += new Vector3(10, 0, 10);
-        targetPositionThree += new Vector3(10, 0, 10);
+        targetPositionOne += transform.position + new Vector3(10, 0, 10);
+        targetPositionTwo += transform.position + new Vector3(10, 0, 10);
+        targetPositionThree += transform.position + new Vector3(10, 0, 10);
 
         TriggerFire indicator1 = Instantiate(indicator, targetPositionOne, Quaternion.identity).GetComponent<TriggerFire>();
         TriggerFire indicator2 = Instantiate(indicator, targetPositionTwo, Quaternion.identity).GetComponent<TriggerFire>();

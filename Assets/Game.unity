@@ -1959,7 +1959,7 @@ Prefab:
     - target: {fileID: 114728623725026012, guid: 329dd9c13f5477e47b4f1897dbb00227,
         type: 2}
       propertyPath: phaseOneFrequency
-      value: 16
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1423013754571054, guid: 329dd9c13f5477e47b4f1897dbb00227, type: 2}
       propertyPath: m_IsActive
@@ -2008,6 +2008,11 @@ Prefab:
     - target: {fileID: 1299980531451994, guid: 329dd9c13f5477e47b4f1897dbb00227, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728623725026012, guid: 329dd9c13f5477e47b4f1897dbb00227,
+        type: 2}
+      propertyPath: phaseOneRange
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 329dd9c13f5477e47b4f1897dbb00227, type: 2}
