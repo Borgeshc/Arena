@@ -5,16 +5,19 @@ using UnityEngine;
 public class Limb : MonoBehaviour
 {
     public int limbHealth = 150;
+    public bool canFall;
 
     int health;
     bool isDead;
 
     Health baseHealth;
+    Rigidbody rb;
 
     private void Start()
     {
         health = limbHealth;
         baseHealth = transform.root.GetComponent<Health>();
+        rb = GetComponent<Rigidbody>();
     }
 
     public void TookDamage(int damage)
@@ -32,5 +35,16 @@ public class Limb : MonoBehaviour
     void Died()
     {
         baseHealth.LimbDestroyed();
+
+        if(canFall)
+        {
+            transform.parent = null;
+            rb.isKinematic = false;
+            rb.useGravity = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

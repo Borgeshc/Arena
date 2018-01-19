@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     Quaternion rotation;
     Vector3 movement;
     Rigidbody rb;
+    Animator anim;
 
 
     private void Start()
@@ -33,6 +34,11 @@ public class Movement : MonoBehaviour
         movement = transform.TransformDirection(movement);
         rb.velocity = movement;
 
+        if (rb.velocity == Vector3.zero)
+            anim.SetBool("IsMoving", false);
+        else
+            anim.SetBool("IsMoving", true);
+
         Rotate();
 	}
 
@@ -41,5 +47,10 @@ public class Movement : MonoBehaviour
         xRotationValue -= -horizontal2 * rotationSpeed * Time.deltaTime;
         rotation = Quaternion.Euler(0, xRotationValue, 0);
         transform.rotation = rotation;
+    }
+
+    public void SetClassValues(Animator _anim)
+    {
+        anim = _anim;
     }
 }
