@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -669,6 +669,7 @@ GameObject:
   - component: {fileID: 304392629}
   - component: {fileID: 304392628}
   - component: {fileID: 304392627}
+  - component: {fileID: 304392631}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -739,6 +740,18 @@ Transform:
   m_Father: {fileID: 1489582190}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &304392631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 304392626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 7b4f8158b8deabc43a76476f71bc42d3, type: 2}
 --- !u!1 &333350121
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,31 +983,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 435572, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.006953597
       objectReference: {fileID: 0}
     - target: {fileID: 435572, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -1.004135
       objectReference: {fileID: 0}
     - target: {fileID: 435572, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0122118
       objectReference: {fileID: 0}
     - target: {fileID: 435572, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.002520293
       objectReference: {fileID: 0}
     - target: {fileID: 435572, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.007373152
       objectReference: {fileID: 0}
     - target: {fileID: 435572, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.003931767
       objectReference: {fileID: 0}
     - target: {fileID: 435572, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9999619
       objectReference: {fileID: 0}
     - target: {fileID: 435572, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
       propertyPath: m_RootOrder
@@ -1275,6 +1288,18 @@ Prefab:
     - target: {fileID: 494766, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 50.376198
+      objectReference: {fileID: 0}
+    - target: {fileID: 435572, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.29200003
+      objectReference: {fileID: 0}
+    - target: {fileID: 435572, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.84400004
+      objectReference: {fileID: 0}
+    - target: {fileID: 435572, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.448
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b88649983b1f2164bb1cbee661bf9369, type: 2}
@@ -2340,6 +2365,7 @@ MonoBehaviour:
   limbHealth: 200
   canFall: 1
   addforce: 0
+  explosion: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 2}
 --- !u!114 &1972465212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2354,6 +2380,7 @@ MonoBehaviour:
   limbHealth: 200
   canFall: 1
   addforce: 0
+  explosion: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 2}
 --- !u!114 &1972465213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,6 +2395,7 @@ MonoBehaviour:
   limbHealth: 200
   canFall: 1
   addforce: 1
+  explosion: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 2}
 --- !u!114 &1972465214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2382,6 +2410,7 @@ MonoBehaviour:
   limbHealth: 200
   canFall: 0
   addforce: 0
+  explosion: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 2}
 --- !u!195 &1972465215
 NavMeshAgent:
   m_ObjectHideFlags: 0
