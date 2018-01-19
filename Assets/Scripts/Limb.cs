@@ -6,6 +6,7 @@ public class Limb : MonoBehaviour
 {
     public int limbHealth = 150;
     public bool canFall;
+    public bool addforce;
 
     int health;
     bool isDead;
@@ -41,6 +42,9 @@ public class Limb : MonoBehaviour
             transform.parent = null;
             rb.isKinematic = false;
             rb.useGravity = true;
+
+            if (addforce)
+                rb.AddForce(-transform.forward * 5, ForceMode.Impulse);
         }
         else
         {

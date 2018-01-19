@@ -1951,6 +1951,30 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 498710, guid: 329dd9c13f5477e47b4f1897dbb00227, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.4580322
+      objectReference: {fileID: 0}
+    - target: {fileID: 498710, guid: 329dd9c13f5477e47b4f1897dbb00227, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.8889357
+      objectReference: {fileID: 0}
+    - target: {fileID: 498710, guid: 329dd9c13f5477e47b4f1897dbb00227, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498710, guid: 329dd9c13f5477e47b4f1897dbb00227, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.6668028
+      objectReference: {fileID: 0}
+    - target: {fileID: 498710, guid: 329dd9c13f5477e47b4f1897dbb00227, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.0415237
+      objectReference: {fileID: 0}
+    - target: {fileID: 498710, guid: 329dd9c13f5477e47b4f1897dbb00227, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 54.520004
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 329dd9c13f5477e47b4f1897dbb00227, type: 2}
   m_IsPrefabParent: 0
@@ -2047,6 +2071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limbHealth: 200
   canFall: 1
+  addforce: 0
 --- !u!114 &1972465212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2060,6 +2085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limbHealth: 200
   canFall: 1
+  addforce: 0
 --- !u!114 &1972465213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2073,6 +2099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limbHealth: 200
   canFall: 1
+  addforce: 1
 --- !u!114 &1972465214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2086,6 +2113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limbHealth: 200
   canFall: 0
+  addforce: 0
 --- !u!54 &1972465225
 Rigidbody:
   m_ObjectHideFlags: 0

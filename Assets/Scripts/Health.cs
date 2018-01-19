@@ -9,10 +9,12 @@ public class Health : MonoBehaviour
     int health;
 
     bool isDead;
+    Animator anim;
 
     private void Start()
     {
         health = healthPool;
+        anim = GetComponent<Animator>();
     }
 
     public void TookDamage(int damage)
@@ -28,7 +30,7 @@ public class Health : MonoBehaviour
 
     void Died()
     {
-        
+        anim.SetBool("IsDead", true);
     }
 
     public void LimbDestroyed()
