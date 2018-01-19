@@ -12,12 +12,14 @@ public class Health : MonoBehaviour
     bool isDead;
     Animator anim;
     NavMeshAgent agent;
+    Boss boss;
 
     private void Start()
     {
         health = healthPool;
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        boss = GetComponent<Boss>();
     }
 
     public void TookDamage(int damage)
@@ -37,9 +39,10 @@ public class Health : MonoBehaviour
         agent.isStopped = true;
     }
 
-    public void LimbDestroyed()
+    public void LimbDestroyed(Limb.LimbType limbType)
     {
         TookDamage(100);
+        boss.WeaponDestroyed(limbType);
     }
 }
 

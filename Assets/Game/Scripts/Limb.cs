@@ -9,6 +9,16 @@ public class Limb : MonoBehaviour
     public bool addforce;
     public GameObject explosion;
 
+    public enum LimbType
+    {
+        none,
+        topLimb,
+        leftLimb,
+        rightLimb
+    };
+
+    public LimbType limbType;
+
     int health;
     bool isDead;
 
@@ -36,7 +46,7 @@ public class Limb : MonoBehaviour
 
     void Died()
     {
-        baseHealth.LimbDestroyed();
+        baseHealth.LimbDestroyed(limbType);
 
         Instantiate(explosion, transform.position, Quaternion.identity);
 

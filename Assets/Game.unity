@@ -2014,6 +2014,21 @@ Prefab:
       propertyPath: phaseOneRange
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114834467307944486, guid: 329dd9c13f5477e47b4f1897dbb00227,
+        type: 2}
+      propertyPath: limbType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114112646399804990, guid: 329dd9c13f5477e47b4f1897dbb00227,
+        type: 2}
+      propertyPath: limbType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114489333989035156, guid: 329dd9c13f5477e47b4f1897dbb00227,
+        type: 2}
+      propertyPath: limbType
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 329dd9c13f5477e47b4f1897dbb00227, type: 2}
   m_IsPrefabParent: 0

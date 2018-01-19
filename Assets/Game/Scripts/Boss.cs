@@ -21,6 +21,7 @@ public class Boss : MonoBehaviour
     Animator anim;
 
     bool phaseOneActive;
+    bool topCannonsDestroyed;
 
     Vector3 targetPositionOne;
     Vector3 targetPositionTwo;
@@ -50,9 +51,11 @@ public class Boss : MonoBehaviour
         else
             agent.SetDestination(transform.position);
 
+        
         if(!phaseOneActive)
         {
             phaseOneActive = true;
+            if (topCannonsDestroyed) return;
             PhaseOne();
             StartCoroutine(WaitForPhaseOne());
         }
@@ -82,6 +85,16 @@ public class Boss : MonoBehaviour
         indicator1.SetTarget(this);
         indicator2.SetTarget(this);
         indicator3.SetTarget(this);
+    }
+
+    public void WeaponDestroyed(Limb.LimbType limbType)
+    {
+        switch(limbType)
+        {
+            case Limb.LimbType.topLimb:
+                topCannonsDestroyed = true;
+                break;
+        }
     }
 
     public void TriggerTopCannons()
