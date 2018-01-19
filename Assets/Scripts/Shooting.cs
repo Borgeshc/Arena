@@ -13,6 +13,7 @@ public class Shooting : MonoBehaviour
     float accuracy;
 
     Animator anim;
+    Animator reticleAnimator;
 
     Camera mainCamera;
     float muzzleFrequency;
@@ -28,13 +29,22 @@ public class Shooting : MonoBehaviour
 
     public void Update()
     {
-       if(Input.GetKey(KeyCode.Mouse0) && !isFiring)
+       if(Input.GetKey(KeyCode.Mouse0))
         {
-            isFiring = true;
-            StartCoroutine(MuzzleFlash());
-            Fire();
-            anim.SetTrigger("Fire");
-            StartCoroutine(FireFrequency());
+            reticleAnimator.SetBool("IsFiring", true);
+
+            if (!isFiring)
+            {
+                isFiring = true;
+                StartCoroutine(MuzzleFlash());
+                Fire();
+                anim.SetTrigger("Fire");
+                StartCoroutine(FireFrequency());
+            }
+        }
+       else
+        {
+            reticleAnimator.SetBool("IsFiring", false);
         }
     }
 
@@ -70,7 +80,7 @@ public class Shooting : MonoBehaviour
         muzzleFlash.SetActive(false);
     }
 
-    public void SetClassValues(int _damage, float _attackRange, float _fireFrequency, float _accuracy, GameObject _muzzleFlash, Animator _anim)
+    public void SetClassValues(int _damage, float _attackRange, float _fireFrequency, float _accuracy, GameObject _muzzleFlash, Animator _anim, Animator _reticleAnimator)
     {
         damage = _damage;
         attackRange = _attackRange;
@@ -78,5 +88,6 @@ public class Shooting : MonoBehaviour
         accuracy = _accuracy;
         muzzleFlash = _muzzleFlash;
         anim = _anim;
+        reticleAnimator = _reticleAnimator;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Health : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class Health : MonoBehaviour
 
     bool isDead;
     Animator anim;
+    NavMeshAgent agent;
 
     private void Start()
     {
         health = healthPool;
         anim = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     public void TookDamage(int damage)
@@ -31,6 +34,7 @@ public class Health : MonoBehaviour
     void Died()
     {
         anim.SetBool("IsDead", true);
+        agent.isStopped = true;
     }
 
     public void LimbDestroyed()

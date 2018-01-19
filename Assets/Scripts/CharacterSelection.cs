@@ -25,6 +25,8 @@ public class CharacterSelection : MonoBehaviour
     public float assaultFireFrequency;
     public float assaultAccuracy;
 
+    Animator assaultReticleAnimator;
+
     [Space, Header("Heavy Class")]
     public Animator heavyAnimator;
     public GameObject heavyClass;
@@ -36,6 +38,8 @@ public class CharacterSelection : MonoBehaviour
     public float heavyFireFrequency;
     public float heavyAccuracy;
 
+    Animator heavyReticleAnimator;
+
     Shooting shooting;
     Movement movement;
 
@@ -45,13 +49,16 @@ public class CharacterSelection : MonoBehaviour
         shooting = player.GetComponent<Shooting>();
         movement = player.GetComponent<Movement>();
 
+        assaultReticleAnimator = assaultReticle.GetComponent<Animator>();
+        heavyReticleAnimator = heavyReticle.GetComponent<Animator>();
+
         switch (currentClass)
         {
             case Class.assault:
                 assaultClass.SetActive(true);
                 assaultReticle.SetActive(true);
                 cameraController.SetOffset(assaultPosition);
-                shooting.SetClassValues(assaultDamage, assaultAttackRange, assaultFireFrequency, assaultAccuracy, assaultMuzzleFlash, assaultAnimator);
+                shooting.SetClassValues(assaultDamage, assaultAttackRange, assaultFireFrequency, assaultAccuracy, assaultMuzzleFlash, assaultAnimator, assaultReticleAnimator);
                 movement.SetClassValues(assaultAnimator);
                 break;
 
@@ -59,7 +66,7 @@ public class CharacterSelection : MonoBehaviour
                 heavyClass.SetActive(true);
                 heavyReticle.SetActive(true);
                 cameraController.SetOffset(heavyPosition);
-                shooting.SetClassValues(heavyDamage, heavyAttackRange, heavyFireFrequency, heavyAccuracy, heavyMuzzleFlash, heavyAnimator);
+                shooting.SetClassValues(heavyDamage, heavyAttackRange, heavyFireFrequency, heavyAccuracy, heavyMuzzleFlash, heavyAnimator, heavyReticleAnimator);
                 movement.SetClassValues(heavyAnimator);
                 break;
         }
